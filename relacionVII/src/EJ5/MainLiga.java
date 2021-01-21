@@ -11,7 +11,7 @@ public class MainLiga {
 		
 		try {
 			
-			Partido partido1=new Partido(6,betis,betis);
+			Partido partido1=new Partido(6,sevilla,betis);
 			partido1.ponerResultado("2-1");
 			System.out.println(partido1);
 			

@@ -15,13 +15,9 @@ public class Partido {
 	public Partido(int jornada, Equipo equipoLocal, Equipo equipoVisitante) throws LigaException{
 		this.equipoLocal=equipoLocal;
 		this.equipoVisitante=equipoVisitante;
-		this.golesLocal=0;
-		this.golesVisitante=0;
-		this.equipoLocal=equipoLocal;
-		this.equipoVisitante=equipoVisitante;
 		
 		
-		jugado=false;
+	
 		setJornada(jornada);
 		jugado=true;
 		
@@ -109,11 +105,7 @@ public class Partido {
 		
 		return info;
 	}
-	public boolean seHaJugado(){
-		boolean jugado;
-		
-		return jugado;
-	}
+	
 
 	private void setJornada(int jornada) throws LigaException {
 		if(jornada<JORNADA_MIN||jornada>JORNADA_MAX) {
