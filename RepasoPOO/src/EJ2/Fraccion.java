@@ -5,16 +5,29 @@ public class Fraccion {
 	private int numerador;
 	private int denominador;
 	
-	public boolean equals(Fraccion otraFraccion) {
+	public Fraccion(int numerador, int denominador) throws FraccionException {
+		this.numerador = numerador;
 		
+		if(denominador==0) {
+			throw new FraccionException("Error, el denominador no puede ser 0");
+		}
+		this.denominador = denominador;
+	}
+	
+	
+	public boolean equals(Fraccion otraFraccion) {
 		
 		
 		return false;
 		
 	}
 	
+	
+
 	public Fraccion sumar(Fraccion fraccionASumar) {
 		Fraccion resultado = null;
+		
+		
 		
 		return resultado;
 	}
