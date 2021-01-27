@@ -6,6 +6,7 @@ public class MonroyPet {
 	public static final int PUNTOS_INICIALES = 0;
 	private String tipo;
 	private String nombre;
+	private String tipoComida;
 	private int puntos;
 	private int comida;
 	private static int totalJugadoEntreMascotas = 0;
@@ -19,6 +20,7 @@ public class MonroyPet {
 		this.nombre = nombre;
 		this.puntos = PUNTOS_INICIALES;
 		this.comida = COMIDA_INICIAL;
+		
 	}
 	
 	//Metodos
@@ -49,16 +51,12 @@ public class MonroyPet {
 	@Override
 	public String toString() {
 		return "Su mascota de tipo " + tipo + ", cuyo nombre es " + nombre + ", y que ha obtenido " + puntos
-				+ ". Su comida es " + comida;
+				+ ". Le quedan" + comida + " "+tipoComida;
 	}
 	
 
 	public void darComida() throws MonroyPetException{
-		
-		
-		
-		
-		
+		comida--;
 		
 	}
 	
@@ -66,23 +64,45 @@ public class MonroyPet {
 
 
 	public void comprarComida() throws MonroyPetException{
+		int alimentosAComprar = 0;
 		
+		if(puntos<30) {
+			throw new MonroyPetException("Error, puntos insuficientes para comprar alimentos");
+		}
+		if(alimentosAComprar<0) {
+			throw new MonroyPetException("Error, no puede haber alimentos negativos");
+		}
 		
-		
-		
+		comida=comida+ alimentosAComprar;
+		puntos=puntos-(30*alimentosAComprar);
 		
 	}
 	
 	public void jugar(int minutos)throws MonroyPetException {
 		
+		if(minutos>=20) {
+			throw new MonroyPetException("Ha llegado al limite diario de 20 min de juego");
+		}
 		
-		
-		
-		
-		
+		for(minutos=1;minutos<=20;minutos++) {
+			puntos=puntos+3;
+		}
 		
 	}
 	
-	
+	public String comidaMascota(String tipo) {
+		String tipoComida = null;
+		
+		if(tipo=="GATO") {
+			tipoComida="pescado";
+		}else {
+			if(tipo=="PERRO") {
+				tipoComida="huesos";
+			}
+		}
+		
+		return tipoComida;
+		
+	}
 
 }
