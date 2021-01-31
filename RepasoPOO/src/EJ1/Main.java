@@ -5,15 +5,24 @@ public class Main {
 	private static Scanner teclado = new Scanner(System.in);
 	public static void main(String[] args) {
 		
-		try {
-			MonroyPet mascota1=new MonroyPet("GATO", "DORAEMON");
-			MonroyPet mascota2=new MonroyPet("PERRO","TOBY");
-			mostrarMenu(mascota1,mascota2);
-		} catch (MonroyPetException e) {
-			e.getMessage();
+		
+		
+			MonroyPet mascota1;
+			MonroyPet mascota2;
+			try {
+				mascota1 = new MonroyPet("PERRO", "DORAEMON");
+				mascota2=new MonroyPet("GATO","TOBY");
+				mostrarMenu(mascota1,mascota2);
+			} catch (MonroyPetException e) {
+				
+				e.printStackTrace();
+			}
+		
+			
+	
 		}
 		
-	}
+	
 	
 	public static void mostrarMenu(MonroyPet mascota1,MonroyPet mascota2) {
 		int opcionMenu;
@@ -101,19 +110,16 @@ public class Main {
 				
 				
 			case 5:
-				System.out.println("HAS SELECCIONADO SALIR");
-				System.out.println("QUE PASE UN BUEN DIA");
-				
-				
+				System.out.println("HAS SELECCIONADO SALIR, QUE PASE UN BUEN DIA");				
 			}
 			
-			
-				
 		}
-		
-		
-		
+				
 	}
+		
+		
+		
+	
 
 	
 	
