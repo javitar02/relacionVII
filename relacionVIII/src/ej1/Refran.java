@@ -30,7 +30,15 @@ public class Refran {
 		return popularidad;
 	}
 
-
+	
+	
+	public int compareTo(Refran otro) {
+		return Integer.compare(popularidad,otro.popularidad);
+	}
+	
+	
+	
+	
 	public void setPopularidad(int popularidad)throws RefranException {
 		
 		if(popularidad<0||popularidad>100) {
